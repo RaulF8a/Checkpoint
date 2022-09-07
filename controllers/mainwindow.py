@@ -15,6 +15,8 @@ class MainWindowForm (QWidget, MainWindow):
         self.correo_textEdit.textChanged.connect (self.textoModificado)
         self.carrera_textEdit.textChanged.connect (self.textoModificado)
 
+        self.botonEnviar.clicked.connect (self.readButton)
+
     def saveState (self) -> None:
         nombre = str (self.nombre_textEdit.toPlainText ())
         codigo = str (self.codigo_textEdit.toPlainText ())
@@ -52,3 +54,18 @@ class MainWindowForm (QWidget, MainWindow):
     
     def textoModificado (self):
         self.saveState ()
+
+    def readButton (self):
+        nombre = str (self.nombre_textEdit.toPlainText ())
+        codigo = str (self.codigo_textEdit.toPlainText ())
+        correo = str (self.correo_textEdit.toPlainText ())
+        carrera = str (self.carrera_textEdit.toPlainText ())
+
+        diccionario = {
+            "nombre": nombre,
+            "codigo": codigo,
+            "correo": correo,
+            "carrera": carrera 
+        }
+
+        print (diccionario)
