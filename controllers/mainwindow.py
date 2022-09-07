@@ -1,5 +1,4 @@
-from PySide6.QtWidgets import QWidget, QTableWidgetItem, QAbstractItemView, QHBoxLayout, QFrame, QTableWidget, QPushButton
-from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QWidget
 from views.mainwindow import MainWindow
 import pickle as pk
 from os import path
@@ -9,7 +8,6 @@ class MainWindowForm (QWidget, MainWindow):
         super().__init__()
         self.setupUi (self)
 
-        # self.createFile ()
         self.loadState ()
 
         self.nombre_textEdit.textChanged.connect (self.textoModificado)
